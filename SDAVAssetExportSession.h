@@ -113,6 +113,11 @@
 @property (nonatomic, assign) BOOL shouldOptimizeForNetworkUse;
 
 /**
+ * The processing algorithm used to manage audio pitch for scaled audio edits.
+ */
+@property (nonatomic, assign) AVAudioTimePitchAlgorithm audioTimePitchAlgorithm;
+
+/**
  * The metadata to be written to the output file by the export session.
  */
 @property (nonatomic, copy) NSArray *metadata;
