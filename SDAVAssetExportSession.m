@@ -47,6 +47,7 @@
     {
         _asset = asset;
         _timeRange = CMTimeRangeMake(kCMTimeZero, kCMTimePositiveInfinity);
+        _audioTimePitchAlgorithm = AVAudioTimePitchAlgorithmLowQualityZeroLatency;
     }
 
     return self;
@@ -147,6 +148,7 @@
     if (audioTracks.count > 0) {
       self.audioOutput = [AVAssetReaderAudioMixOutput assetReaderAudioMixOutputWithAudioTracks:audioTracks audioSettings:nil];
       self.audioOutput.alwaysCopiesSampleData = NO;
+      self.audioOutput.audioTimePitchAlgorithm = self.audioTimePitchAlgorithm;
       self.audioOutput.audioMix = self.audioMix;
       if ([self.reader canAddOutput:self.audioOutput])
       {
