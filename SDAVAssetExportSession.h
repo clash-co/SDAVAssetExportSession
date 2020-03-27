@@ -115,7 +115,7 @@
 /**
  * The processing algorithm used to manage audio pitch for scaled audio edits.
  */
-@property (nonatomic, assign) AVAudioTimePitchAlgorithm audioTimePitchAlgorithm;
+@property (nonatomic, copy) AVAudioTimePitchAlgorithm audioTimePitchAlgorithm;
 
 /**
  * The metadata to be written to the output file by the export session.
