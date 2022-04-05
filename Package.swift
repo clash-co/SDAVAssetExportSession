@@ -17,7 +17,10 @@ let package = Package(
         .target(
             name: "SDAVAssetExportSession",
             dependencies: [],
-            path: "Sources"
+            publicHeadersPath: ".",
+            cSettings: [
+              .headerSearchPath("."),
+            ]
         )
     ]
 )
